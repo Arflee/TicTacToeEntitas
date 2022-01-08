@@ -23,10 +23,8 @@ public class CreateGameFieldSystem : IInitializeSystem
         {
             for (int x = 0; x < fieldSize; x++)
             {
-                var placingPosition = new Vector2(
-                    -cellSize.x + x * cellSize.x,
-                    -cellSize.y + y * cellSize.y
-                );
+                var placingPosition = -cellSize * (fieldSize - 1) / 2;
+                placingPosition += new Vector3(cellSize.x * x, cellSize.y * y);
 
                 var placedObject = Object.Instantiate(
                         cellPrefab,

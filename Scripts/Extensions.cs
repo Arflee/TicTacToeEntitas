@@ -36,7 +36,7 @@ public static class Extensions
     public static IEnumerable<T[]> GetDiagonals<T>(this T[,] array)
     {
         //Assuming every game would be with square field
-        //Might fix later to work with all sizes
+        //Might fix later to work with nonsquare sizes
         var length = array.GetLength(0);
 
         T[][] temp = new T[2][];
@@ -51,5 +51,10 @@ public static class Extensions
 
         yield return temp[0];
         yield return temp[1];
+    }
+
+    public static bool IsOdd(this uint number)
+    {
+        return number % 2 != 0;
     }
 }

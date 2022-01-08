@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6013706fdc2168f48b7059c3f154fbcf, type: 3}
   m_Name: GameSetup
   m_EditorClassIdentifier: 
-  gameFieldSize: 3
+  gameFieldSize: 5
   gameCellPrefab: {fileID: 5992112478285977512, guid: 14e6321e92be0024391d8e1273188135, type: 3}
   circlePrefab: {fileID: 5676615361442297807, guid: a4b1dfaeb8592544d975902c4d463a56, type: 3}
   crossPrefab: {fileID: 6251004714632517207, guid: b299fdd168774f440b98e3264c32b52c, type: 3}

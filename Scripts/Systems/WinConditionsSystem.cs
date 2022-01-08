@@ -1,7 +1,6 @@
 using Entitas;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 public class WinConditionsSystem : ReactiveSystem<GameEntity>
 {
@@ -33,13 +32,17 @@ public class WinConditionsSystem : ReactiveSystem<GameEntity>
             }
         }
 
-        foreach (var diagonal in placedFigures.GetDiagonals())
+        if (_gameContext.gameSetup.value.gameFieldSize.IsOdd())
         {
-            if (CheckForWinning(diagonal) && !_gameContext.gameWatcherEntity.hasGameStop)
+            foreach (var diagonal in placedFigures.GetDiagonals())
             {
-                _gameContext.gameWatcherEntity.AddGameStop(diagonal);
+                if (CheckForWinning(diagonal) && !_gameContext.gameWatcherEntity.hasGameStop)
+                {
+                    _gameContext.gameWatcherEntity.AddGameStop(diagonal);
+                }
             }
         }
+        
     }
 
     protected override bool Filter(GameEntity entity)
